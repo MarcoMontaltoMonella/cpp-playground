@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int STACK_SIZE = 100;
+const int STACK_SIZE = 10;
 
 class stack {
     private:

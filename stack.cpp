@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-const int STACK_SIZE = 100;
+const int STACK_SIZE = 10;
 
 class stack {
-    private:
+    protected:
         int count;
         int data[STACK_SIZE];
     
@@ -26,19 +26,3 @@ class stack {
             return (data[count]);
         }
 };
-
-
-int main() 
-{
-    stack a_stack;
-
-    a_stack.push(10);
-    a_stack.push(45);
-    a_stack.push(23);
-
-    cout << a_stack.pop() << "\n";
-    cout << a_stack.pop() << "\n";
-    cout << a_stack.pop() << "\n";
-
-    return 0;
-}
