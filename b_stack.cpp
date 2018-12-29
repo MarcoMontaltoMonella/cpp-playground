@@ -2,31 +2,32 @@
 using namespace std;
 #include "stack.cpp"
 
-class b_stack: public stack {
+template<class kind>
+class b_stack: public stack<kind> {
     public:
         void push(const int item)
         {
-            if(count >= STACK_SIZE){
+            if(this->count >= STACK_SIZE){
                 cerr << "Error: Push overflows stack\n";
                 exit(8);
             }
-            stack::push(item);
+            stack<kind>::push(item);
         }
 
-        int pop(void)
+        kind pop(void)
         {
-            if(count <= 0){
+            if(this->count <= 0){
                 cerr << "Error: Pop causes stack underflow\n";
                 exit(9);
             }
-            return stack::pop();
+            return stack<kind>::pop();
         }
 };
 
 
 int main() 
 {
-    b_stack a_stack;
+    b_stack<int> a_stack;
 
     a_stack.push(10);
     a_stack.push(43);

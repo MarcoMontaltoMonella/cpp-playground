@@ -3,10 +3,13 @@ using namespace std;
 
 const int STACK_SIZE = 10;
 
+template<class kind>
 class stack {
     protected:
         int count;
-        int data[STACK_SIZE];
+    
+    private:
+        kind data[STACK_SIZE];
     
     public:
         stack(void)
@@ -20,7 +23,7 @@ class stack {
             ++count;
         }
 
-        int pop(void)
+        kind pop(void)
         {
             --count;
             return (data[count]);
